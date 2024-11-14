@@ -113,7 +113,7 @@ h3 {
 .about-us-modal-content {
     position: relative;
     /*da una pocicion sobrepuesta en la pantalla*/
-    top: -20%; 
+    top: -10%; 
     /* la ubica en el medio de la pantalla*/
     background-color: #ec9fac;
     /* Fondo pastel suave para el contenido del modal */
