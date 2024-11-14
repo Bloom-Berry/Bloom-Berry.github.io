@@ -1,0 +1,363 @@
+/* Estilos Globales */
+body {
+    font-family: 'Arial', sans-serif;
+    /* Establece la tipografía principal */
+    background-color: rgb(252, 230, 193);
+    /* Establece un color de fondo cálido */
+    margin: 0;
+    padding: 0;
+}
+
+/* Encabezado (Header) */
+header {
+    background-color: #fbb0d3cf;
+    /* Color de fondo suave para el encabezado */
+    padding: 15px 0;
+    /* Espaciado alrededor del encabezado */
+}
+
+/* Contenedor Principal */
+.container {
+    width: 90%;
+    /* Ancho del contenedor al 90% del tamaño de la pantalla */
+    max-width: 1200px;
+    /* Ancho máximo de 1200px */
+    margin: auto;
+    /* Centra el contenedor horizontalmente */
+}
+
+/* Logo y Navegación */
+.logo {
+    font-size: 26px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+    /* Color oscuro para el logo */
+}
+
+/* Estilo de la barra de navegación */
+.nav-links {
+    list-style: none;
+    /* Elimina los puntos de la lista */
+    display: flex;
+    /* Muestra los elementos de navegación en fila */
+    justify-content: flex-end;
+    /* Alinea los enlaces a la derecha */
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin-left: 20px;
+    /* Espacio entre los elementos de la lista */
+}
+
+.nav-links a {
+    text-decoration: none;
+    /* Elimina subrayado */
+    color: #333;
+    /* Color de los enlaces */
+    font-size: 16px;
+    transition: color 0.3s;
+    /* Transición suave para el color al hacer hover */
+}
+
+.nav-links a:hover {
+    color: #ff4500;
+    /* Color cuando el enlace es hover (naranja) */
+}
+
+/* Logo Principal - Responsivo */
+.logo_principal {
+    background-color: rgb(252, 230, 193);
+    /* Fondo pastel para el logo */
+}
+
+.logo_principal_imagen {
+    max-width: 100%;
+    /* Asegura que la imagen no se desborde */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    /* Centra la imagen */
+}
+
+/* Títulos */
+h2,
+h3 {
+    text-align: center;
+    /* Centra el texto */
+    margin: 20px 0;
+    /* Espacio encima y debajo del título */
+}
+
+/* Modal */
+.modal,
+
+.about-us-modal {
+    display: none;
+    /* Oculta los modales por defecto */
+    position: fixed;
+    /* Posiciona el modal de manera fija */
+    z-index: 1;
+    /* Asegura que el modal esté por encima de otros elementos */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Fondo oscuro semi-transparente */
+}
+
+.modal-content,
+.about-us-modal-content {
+    position: relative;
+    /*da una pocicion sobrepuesta en la pantalla*/
+    top: -20%; 
+    /* la ubica en el medio de la pantalla*/
+    background-color: #ec9fac;
+    /* Fondo pastel suave para el contenido del modal */
+    padding: 20px;
+    /* Espaciado interno */
+    margin: 15% auto;
+    /* Centra el modal verticalmente y le da un margen */
+    width: 80%;
+    max-width: 500px;
+    /* Ancho máximo del modal */
+    border-radius: 10px;
+    /* Bordes redondeados */
+    text-align:center;
+    /* Centra el contenido del modal */
+}
+
+#modal-image {
+    width: 100%;
+    /* Asegura que la imagen no se desborde */
+    max-width: 200px;
+    /* Establece un ancho máximo para la imagen */
+    height: 200px;
+    /* Mantiene la proporción de la imagen */
+    object-fit: contain;
+    /* Asegura que la imagen se ajuste bien sin distorsión */
+}
+
+/* Estilo del botón de cerrar */
+.close,
+.close-about-us {
+    color: #aaa;
+    /* Color del botón de cerrar */
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    right: 20px;
+    top: 0;
+}
+
+.close:hover,
+.close-about-us:hover {
+    color: black;
+    /* Cambia a negro cuando el botón de cerrar es hover */
+    cursor: pointer;
+}
+
+/* Contenedor de Productos */
+.products {
+    display: flex;
+    /* Muestra los productos en una fila */
+    justify-content: space-around;
+    /* Distribuye los productos uniformemente */
+    margin: 20px 0;
+    /* Espaciado superior e inferior */
+    flex-wrap: wrap;
+    /* Permite que los productos se ajusten a la siguiente fila en pantallas pequeñas */
+}
+
+.product {
+    border-radius: 50%;
+    /* Bordes redondeados en forma de círculo */
+    background-color: #fbb0d3cf;
+    /* Fondo pastel para los productos */
+    height: 400px;
+    /* Altura de los productos */
+    width: 380px;
+    /* Ancho de los productos */
+    cursor: pointer;
+    /* El cursor cambia a pointer para indicar interactividad */
+    display: flex;
+    /* Usamos flexbox para alinear la imagen */
+    justify-content: center;
+    /* Centra la imagen horizontalmente */
+    align-items: center;
+    /* Centra la imagen verticalmente */
+    margin: 10px;
+    /* Espaciado alrededor de cada producto */
+    overflow: hidden;
+    /* Oculta cualquier contenido que se desborde */
+    transition: transform 0.3s;
+    /* Transición suave para el efecto de hover */
+}
+
+.product:hover {
+    transform: scale(1.05);
+    /* Efecto de zoom cuando el producto es hover */
+}
+
+.product img {
+    max-width: 400px;
+    /* Asegura que la imagen no se desborde */
+    max-height: 100%;
+    /* Asegura que la imagen se ajuste dentro del contenedor */
+    object-fit: contain;
+    /* Mantiene la relación de aspecto de la imagen */
+}
+
+/* Estilo para el botón de compra */
+#buy-button {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#buy-button button {
+    background-color: #ffffff;
+    /* Color pastel suave para el botón */
+    color: #e083d8;
+    border: none;
+    padding: 10px 20px;
+    /* Espaciado dentro del botón */
+    font-size: 16px;
+    border-radius: 25px;
+    /* Bordes redondeados */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    /* Transición suave para el cambio de color */
+}
+
+#buy-button button:hover {
+    background-color: #f58fb1;
+    /* Color más oscuro para el hover */
+}
+
+/* Eslogan */
+.eslogan {
+    background-color: #fbb0d3cf;
+    /* Fondo pastel para el eslogan */
+    padding: 20px;
+    margin: 40px 0;
+    /* Espaciado alrededor del eslogan */
+}
+
+.eslogan h3 {
+    font-size: 20px;
+    font-weight: 300;
+    /* Fuente ligera para el eslogan */
+    color: #333;
+    /* Color oscuro para el texto */
+}
+
+/* Estilo del pie de página */
+footer {
+    background-color: #fbb0d3cf;
+    /* Fondo pastel para el pie de página */
+    padding: 10px 0;
+    /* Espaciado vertical */
+    margin-top: 40px;
+}
+
+footer h1 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    /* Espaciado debajo del título */
+}
+
+.social-links {
+    display: flex;
+    /* Muestra los enlaces de las redes sociales en fila */
+    justify-content: center;
+    /* Centra los enlaces */
+    align-items: center;
+    gap: 15px;
+    /* Espaciado entre los íconos */
+}
+
+.logo_button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.logo_image {
+    width: 50px;
+    /* Tamaño de los íconos de redes sociales */
+    height: auto;
+}
+
+/* Estilo para el enlace PQRS (preguntas, quejas, reclamos) */
+.pqr-link {
+    font-size: 14px;
+    text-decoration: none;
+    /* Elimina el subrayado */
+    color: #333;
+    /* Color del enlace */
+    display: inline-block;
+    margin-top: 10px;
+    /* Espaciado superior */
+}
+
+.pqr-link:hover {
+    text-decoration: underline;
+    /* Subraya el enlace cuando es hover */
+}
+
+/* Responsividad para pantallas pequeñas */
+@media (max-width: 768px) {
+    footer h1 {
+        font-size: 14px;
+        /* Reduce el tamaño del texto del pie de página */
+    }
+
+    .social-links {
+        flex-direction: row;
+        /* Alinea los íconos horizontalmente */
+    }
+
+    .logo_image {
+        width: 40px;
+        /* Ajusta el tamaño de los íconos */
+    }
+
+    .pqr-link {
+        font-size: 12px;
+        /* Ajusta el tamaño del enlace */
+    }
+}
+
+@media (max-width: 480px) {
+    footer h1 {
+        font-size: 12px;
+        /* Ajusta el tamaño de la fuente aún más en pantallas pequeñas */
+    }
+
+    .social-links {
+        gap: 10px;
+        /* Reduce el espacio entre los íconos */
+    }
+
+    .logo_image {
+        width: 30px;
+        /* Hace los íconos más pequeños */
+    }
+
+    .pqr-link {
+        font-size: 10px;
+        /* Ajusta el tamaño del enlace */
+    }
+}
+
+/* Ajustes Responsivos para productos */
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+    }
+}
