@@ -1,3 +1,4 @@
+
 /* Estilos Globales */
 body {
     font-family: 'Arial', sans-serif;
@@ -91,61 +92,46 @@ h3 {
     /* Espacio encima y debajo del título */
 }
 
-/* Modal */
+/* Modal - Ajustes Responsivos y centrado */
 .modal,
-
 .about-us-modal {
-    display: none;
-    /* Oculta los modales por defecto */
+    display: none;  /* Inicialmente oculto */
     position: fixed;
-    /* Posiciona el modal de manera fija */
     z-index: 1;
-    /* Asegura que el modal esté por encima de otros elementos */
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
-    /* Fondo oscuro semi-transparente */
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); /* Centra el modal en ambas direcciones */
+    width: 80%; /* Asegura que el modal ocupe un 80% del ancho */
+    max-width: 500px; /* Ancho máximo del modal */
+    max-height: 90vh; /* Limita la altura máxima para evitar que se corte en pantallas pequeñas */
+    background-color: #ec9fac; /* Color de fondo suave sin sombra */
+    padding: 20px; /* Padding interno */
+    border-radius: 10px; /* Bordes redondeados */
+    overflow-y: auto; /* Agrega desplazamiento vertical si el contenido es muy grande */
 }
 
+/* Modal contenido */
 .modal-content,
 .about-us-modal-content {
     position: relative;
-    /*da una pocicion sobrepuesta en la pantalla*/
-    top: -10%; 
-    /* la ubica en el medio de la pantalla*/
-    background-color: #ec9fac;
-    /* Fondo pastel suave para el contenido del modal */
-    padding: 20px;
-    /* Espaciado interno */
-    margin: 15% auto;
-    /* Centra el modal verticalmente y le da un margen */
-    width: 80%;
-    max-width: 500px;
-    /* Ancho máximo del modal */
-    border-radius: 10px;
-    /* Bordes redondeados */
-    text-align:center;
-    /* Centra el contenido del modal */
+    text-align: center;
+    width: 100%; /* Asegura que el contenido del modal ocupe todo el ancho */
+    height: auto;
 }
 
-#modal-image {
+/* Asegura que las imágenes del producto y el de "Más sobre nosotros" sean responsivas */
+#modal-image,
+.about-us-modal img {
     width: 100%;
-    /* Asegura que la imagen no se desborde */
     max-width: 200px;
-    /* Establece un ancho máximo para la imagen */
-    height: 200px;
-    /* Mantiene la proporción de la imagen */
+    height: auto;
     object-fit: contain;
-    /* Asegura que la imagen se ajuste bien sin distorsión */
 }
 
 /* Estilo del botón de cerrar */
 .close,
 .close-about-us {
     color: #aaa;
-    /* Color del botón de cerrar */
     font-size: 28px;
     font-weight: bold;
     position: absolute;
@@ -156,8 +142,45 @@ h3 {
 .close:hover,
 .close-about-us:hover {
     color: black;
-    /* Cambia a negro cuando el botón de cerrar es hover */
     cursor: pointer;
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+    .modal,
+    .about-us-modal {
+        width: 90%; /* Asegura que el modal ocupe más espacio en pantallas pequeñas */
+        max-width: 90%; /* Ancho máximo ajustado en pantallas pequeñas */
+        padding: 15px; /* Reduce el padding en pantallas pequeñas */
+    }
+
+    .modal-content,
+    .about-us-modal-content {
+        padding: 15px; /* Ajusta el padding interno */
+    }
+
+    #modal-image,
+    .about-us-modal img {
+        max-width: 150px; /* Ajusta el tamaño de la imagen en dispositivos pequeños */
+    }
+}
+
+@media (max-width: 480px) {
+    .modal,
+    .about-us-modal {
+        width: 95%; /* Asegura que el modal ocupe casi todo el ancho en pantallas muy pequeñas */
+        max-width: 95%; /* Ajusta el máximo ancho en pantallas muy pequeñas */
+    }
+
+    .modal-content,
+    .about-us-modal-content {
+        padding: 10px; /* Ajusta el padding interno */
+    }
+
+    #modal-image,
+    .about-us-modal img {
+        max-width: 120px; /* Ajusta el tamaño de la imagen en dispositivos aún más pequeños */
+    }
 }
 
 /* Contenedor de Productos */
@@ -210,7 +233,36 @@ h3 {
     object-fit: contain;
     /* Mantiene la relación de aspecto de la imagen */
 }
+/* Estilo para la sección del modal donde se encuentran el input y el botón */
+.modal-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+}
 
+#quantity {
+    margin: 10px 0;
+    padding: 5px;
+    font-size: 16px;
+    width: 60px;
+    /* Asegura que el input de cantidad sea pequeño */
+}
+
+#add-to-cart-button {
+    background-color: #f58fb1;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+#add-to-cart-button:hover {
+    background-color: #e083d8;
+}
 /* Estilo para el botón de compra */
 #buy-button {
     display: block;
@@ -253,6 +305,65 @@ h3 {
     /* Fuente ligera para el eslogan */
     color: #333;
     /* Color oscuro para el texto */
+}
+
+/* Contenedor del Carrito */
+.cart-container {
+    background-color: #fbb0d3cf;
+    padding: 20px;
+    margin: 40px auto;
+    max-width: 800px;
+    border-radius: 10px;
+}
+
+.cart-items {
+    margin-bottom: 20px;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #ffffff;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.cart-item img {
+    max-width: 80px;
+    height: auto;
+    margin-right: 20px;
+}
+
+.cart-item-details {
+    flex: 1;
+}
+
+.cart-item-remove {
+    cursor: pointer;
+    color: red;
+    font-size: 18px;
+}
+
+#cart-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#checkout-button {
+    background-color: #f58fb1;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#checkout-button:hover {
+    background-color: #e083d8;
 }
 
 /* Estilo del pie de página */
@@ -360,4 +471,22 @@ footer h1 {
         flex-direction: column;
         align-items: center;
     }
+}
+
+/* Estilizar los inputs de tamaño */
+fieldset {
+    border: none;
+    margin: 20px 0;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.modal-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
 }

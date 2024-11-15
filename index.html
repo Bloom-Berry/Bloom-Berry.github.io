@@ -16,20 +16,14 @@
             <div class="container">
                 <a class="logo" href="#">Una marca enfocada en ti </a>
                 <ul class="nav-links">
-                    <li><a href="#products">
-                            <h3>Productos</h3>
-                        </a></li>
-                    <li><a href="#footer">
-                            <h3>Contacto</h3>
-                        </a></li>
-                    <li><a href="#" id="about-us-link">
-                            <h3>Más Sobre Nosotros</h3>
-                        </a></li>
+                    <li><a href="#products"><h3>Productos</h3></a></li>
+                    <li><a href="#footer"><h3>Contacto</h3></a></li>
+                    <li><a href="#" id="about-us-link"><h3>Más Sobre Nosotros</h3></a></li>
                 </ul>
             </div>
         </nav>
     </header>
-
+    
     <!-- Modal sobre la empresa -->
     <div id="about-us-modal" class="about-us-modal">
         <div class="about-us-modal-content">
@@ -50,39 +44,49 @@
         <img src="./img/1.1.jpg" alt="Logo BloomBerry" class="logo_principal_imagen">
     </div>
 
+<!-- Modal de producto -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span id="close" class="close">&times;</span>
+        <h2 id="modal-title"></h2>
+        <p id="modal-description"></p>
+        <p id="modal-price"></p>
+        <img id="modal-image" src="" alt="Imagen del Producto">
 
-    <!-- Modal de producto -->
-    <div id="modal" class="modal">
-        <div class="modal-content">
-            <span id="close" class="close">&times;</span>
-            <h2 id="modal-title"></h2>
-            <p id="modal-description"></p>
-            <p id="modal-price"></p>
-            <img id="modal-image" src="" alt="Imagen del Producto">
-
-            <!-- Botón de compra -->
-            <a href="https://www.instagram.com/bloomberry_co/profilecard/?igsh=MWVnZWxvb2Z6eTlwNw==" target="_blank"
-                id="buy-button">
-                <button>Comprar en Instagram</button>
-            </a>
+        <!-- Sección para seleccionar el tamaño y la cantidad -->
+        <div class="modal-actions">
+            <fieldset id="size-selector" style="display: none;"> <!-- Inicialmente oculto -->
+                <legend>Selecciona el tamaño:</legend>
+                <label>
+                    <input type="radio" name="size" value="Pequeño" checked> Pequeño ($4000)
+                </label>
+                <label>
+                    <input type="radio" name="size" value="Grande"> Grande ($5000)
+                </label>
+            </fieldset>
+            <label for="quantity">Cantidad:</label>
+            <input type="number" id="quantity" value="1" min="1" max="10" step="1">
+            
+            <!-- Botón para agregar al carrito -->
+            <button id="add-to-cart-button">Agregar al carrito</button>
         </div>
     </div>
-
+</div>
     <!-- Contenedor de Productos -->
     <main class="container" id="products">
         <h2 class="text-center">Nuestros Productos</h2>
         <div class="products">
-            <div class="product" data-price="$15.000"
+            <div class="product" data-price="$15000"
                 data-description="Serum para el crecimiento y fortalecimiento de las pestañas, perfecto para usar en las noches, con plus gracias a su función desmaquillante, al ponerse en contacto con el agua, permitiendo que tus ojos estén limpios a la perfección."
                 data-image="./img/aceite decorar.jpeg" data-title="Serum y desmaquillante para pestañas">
                 <img src="./img/aceite_sin_fondo-removebg-preview.png" alt="Serum desmaquillante">
             </div>
-            <div class="product" data-price="$18.000"
+            <div class="product" data-price="$18000"
                 data-description="Mantequilla corporal que brinda hidratación profunda y restauración, dejando la piel suave y radiante, por su alto contenido en productos naturales como el aceite de rosa mosqueta y vitamina e, perfectos para mantener la buena salud de tu piel y con una fragancia irresistible."
                 data-image="./img/mantequilla decorar.jpeg" data-title="Body Frosting">
                 <img src="./img/Mantequilla_sin_fondo-removebg-preview.png" alt="Body Frosting">
             </div>
-            <div class="product" data-price="Pequeña $4.000 Grande $5.000"
+            <div class="product" data-price="Pequeña $4000 Grande $5000"
                 data-description="Cristal de baño perfecto para relajar y exfoliar tu piel, con una fragancia frutal y deliciosa para acompañarte durante tu día."
                 data-image="./img/bola decorar.jpeg" data-title="Cristal de baño">
                 <img src="./img/bola_in_fondo-removebg-preview.png" alt="Cristal de baño">
@@ -94,25 +98,32 @@
     <div class="eslogan">
         <h2 class="text-center">La magia de amarte a ti mismo a una marca de distancia</h2>
     </div>
+    <!-- Carrito de Compras -->
+<div class="cart-container" id="cart-container">
+    <h2 class="text-center">Tu Carrito de Compras</h2>
+    <div id="cart-items" class="cart-items"></div>
+    <div id="cart-summary">
+        <h3>Total: <span id="cart-total">$0</span></h3>
+        <button id="checkout-button" class="checkout-button">Finalizar Compra</button>
+    </div>
+</div>
 
-    <!-- Pie de Página -->
-    <footer id="footer">
-        <div class="container text-center">
-            <h1>Síguenos en nuestras redes sociales</h1>
-            <div class="social-links">
-                <a href="https://www.instagram.com/bloomberry_co/profilecard/?igsh=MWVnZWxvb2Z6eTlwNw==" target="_blank"
-                    class="logo_button">
-                    <img src="./img/instagram-removebg-preview.png" alt="Logo Instagram" class="logo_image">
-                </a>
-                <a href="#" target="_blank" class="logo_button">
-                    <img src="./img/descarga-removebg-preview.png" alt="Logo Otro" class="logo_image">
-                </a>
-            </div>
-            <div class="mt-2">
-                <a href="#" class="pqr-link">PQRS</a>
-            </div>
+<footer id="footer">
+    <div class="container text-center">
+        <h1>Síguenos en nuestras redes sociales</h1>
+        <div class="social-links">
+            <a href="https://www.instagram.com/bloomberry_co/profilecard/?igsh=MWVnZWxvb2Z6eTlwNw==" target="_blank" class="logo_button">
+                <img src="./img/instagram-removebg-preview.png" alt="Logo Instagram" class="logo_image">
+            </a>
+            <a href="#" target="_blank" class="logo_button" id="whatsapp-logo">
+                <img src="./img/descarga-removebg-preview.png" alt="Logo whatsapp" class="logo_image">
+            </a>
         </div>
-    </footer>
+        <div class="mt-2">
+            <a href="#" id="pqr-link" class="pqr-link">PQRS</a>
+        </div>
+    </div>
+</footer>
 
     <script src="script.js"></script>
 </body>
